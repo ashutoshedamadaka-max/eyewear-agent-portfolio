@@ -1,0 +1,133 @@
+// =============================================================================
+// EYEWEAR AGENT CLIENT - TypeScript port for Lovable
+// =============================================================================
+// Drop into src/lib/agent.ts in your Lovable project.
+//
+// THIS VERSION calls a Vercel backend instead of OpenAI directly.
+// All agent logic (intent extraction, filtering, recommendation generation)
+// runs server-side. The frontend just sends messages and gets replies.
+//
+// Set VITE_BACKEND_URL in your Lovable env vars to your Vercel deployment URL.
+// =============================================================================
+
+// ---------- Types ----------
+export interface Product {
+  product_id: string;
+  name: string;
+  brand: string;
+  category: "Eyeglasses" | "Sunglasses";
+  price: number;
+  attributes: { frame_type: string; weight: string; material: string };
+  lens_options: string[];
+  use_cases: string[];
+  description: string;
+  image: string;
+  reviews?: string[];
+}
+
+export interface Message {
+  role: "user" | "assistant";
+  content: string;
+}
+
+export interface AgentResult {
+  reply: string;
+  recommended_ids: string[];
+  intent: Record<string, any>;
+  path: "clarify" | "recommend" | "followup" | "no_match" | "demo" | "unknown";
+  error?: string;
+}
+
+// ---------- Config ----------
+// In Lovable, set VITE_BACKEND_URL to your Vercel URL, e.g.:
+// VITE_BACKEND_URL=https://eyewear-agent-yourname.vercel.app
+const BACKEND_URL =
+  (import.meta as any).env?.VITE_BACKEND_URL || "http://localhost:3000";
+
+// ---------- Main Chat Call ----------
+export async function generateResponse(
+  message: string,
+  history: Message[]
+): Promise<AgentResult> {
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/chat`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ message, history }),
+    });
+
+    if (response.status === 429) {
+      return {
+        reply:
+          "Whoa, you've hit the rate limit (30 messages/hour). Take a breather and try again in a bit.",
+        recommended_ids: [],
+        intent: {},
+        path: "unknown",
+        error: "rate_limited",
+      };
+    }
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      return {
+        reply: `Backend error (${response.status}): ${errorText}`,
+        recommended_ids: [],
+        intent: {},
+        path: "unknown",
+        error: errorText,
+      };
+    }
+
+    const data = await response.json();
+    return {
+      reply: data.reply,
+      recommended_ids: data.recommended_ids || [],
+      intent: data.intent || {},
+      path: data.path || "unknown",
+    };
+  } catch (e: any) {
+    return {
+      reply: `Couldn't reach the backend: ${e.message}. Check that VITE_BACKEND_URL is set correctly.`,
+      recommended_ids: [],
+      intent: {},
+      path: "unknown",
+      error: e.message,
+    };
+  }
+}
+
+// ---------- Catalog Fetch ----------
+// Fetched once when the app loads. Used to display product cards
+// when the agent recommends product_ids.
+export async function fetchCatalog(): Promise<Product[]> {
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/catalog`);
+    if (!response.ok) return [];
+    return await response.json();
+  } catch {
+    return [];
+  }
+}
+
+// ---------- Eval Results Fetch ----------
+// Used by the /evals page to render the report.
+export async function fetchEvalResults(): Promise<any> {
+  try {
+    const response = await fetch(`${BACKEND_URL}/api/eval-results`);
+    if (!response.ok) return null;
+    return await response.json();
+  } catch {
+    return null;
+  }
+}
+
+// ---------- Helper: Look up products by ID ----------
+export function lookupProducts(
+  catalog: Product[],
+  productIds: string[]
+): Product[] {
+  const byId = new Map(catalog.map((p) => [p.product_id, p]));
+  return productIds
+    .map((id) => byId.get(id))
+    .filter((p): p is Product => p !== undefined);
+}

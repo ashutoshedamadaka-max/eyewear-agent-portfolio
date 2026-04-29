@@ -1,0 +1,776 @@
+[
+  {
+    "test_id": "T01_clear_sunglasses_with_budget",
+    "description": "Clear intent + budget -> recommend immediately.",
+    "user_turns": [
+      "I need sunglasses for outdoor sports under 2500 rupees"
+    ],
+    "all_replies": [
+      "Outdoor sports? Let\u2019s get you set up with some sunglasses that can keep up with your active lifestyle.\n\nFirst up, the **Lenskart Air Sport Sun** at Rs 2000. It\u2019s lightweight and impact-resistant, perfect for all those sudden moves while you're on the field or trail [LENS-SG-006]. \n\nNext, consider the **Lenskart Air Sun Max** for Rs 2000. It\u2019s also featherlight and designed for maximum performance, just what you need for those long outdoor sessions [LENS-SG-028]. \n\nLastly, the **Lenskart Air Active Sun** at Rs 2100 is another solid choice. It\u2019s got a secure fit, so you won\u2019t have to worry about them slipping off mid-action [LENS-SG-012]. \n\nWhich one\u2019s catching your eye, or do you want to chat about styles?"
+    ],
+    "turns_used": 1,
+    "latency_sec": 11.75,
+    "final_reply": "Outdoor sports? Let\u2019s get you set up with some sunglasses that can keep up with your active lifestyle.\n\nFirst up, the **Lenskart Air Sport Sun** at Rs 2000. It\u2019s lightweight and impact-resistant, perfect for all those sudden moves while you're on the field or trail [LENS-SG-006]. \n\nNext, consider the **Lenskart Air Sun Max** for Rs 2000. It\u2019s also featherlight and designed for maximum performance, just what you need for those long outdoor sessions [LENS-SG-028]. \n\nLastly, the **Lenskart Air Active Sun** at Rs 2100 is another solid choice. It\u2019s got a secure fit, so you won\u2019t have to worry about them slipping off mid-action [LENS-SG-012]. \n\nWhich one\u2019s catching your eye, or do you want to chat about styles?",
+    "recommended_ids": [
+      "LENS-SG-006",
+      "LENS-SG-012",
+      "LENS-SG-028"
+    ],
+    "path_taken": "recommend",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 3
+    },
+    "budget_adherence": {
+      "passed": true,
+      "over_budget_ids": [],
+      "max_budget": 2500
+    },
+    "category_adherence": {
+      "passed": true,
+      "wrong_category_ids": [],
+      "expected": "Sunglasses"
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "recommend",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "score": 5,
+      "reasoning": "The recommendations are specifically tailored for outdoor sports, focusing on lightweight and secure sunglasses that enhance performance during physical activities."
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and helpful, providing specific product recommendations, but could be slightly more concise."
+    },
+    "personality_consistency": {
+      "score": 2,
+      "reasoning": "The response is mostly functional and lacks the quirky, conversational tone that would make it feel distinct, leaning towards a generic AI assistant style."
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T02_vague_query",
+    "description": "Vague query -> ask clarifying question.",
+    "user_turns": [
+      "I want to buy glasses"
+    ],
+    "all_replies": [
+      "Cool! What\u2019re you planning to use them for\u2014everyday wear, work, or something more specific?"
+    ],
+    "turns_used": 1,
+    "latency_sec": 4.43,
+    "final_reply": "Cool! What\u2019re you planning to use them for\u2014everyday wear, work, or something more specific?",
+    "recommended_ids": [],
+    "path_taken": "clarify",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 0
+    },
+    "budget_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "category_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "clarify",
+      "got_question": true
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "skipped": true
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and engaging, encouraging further conversation while remaining concise."
+    },
+    "personality_consistency": {
+      "score": 4,
+      "reasoning": "The casual phrasing and conversational tone suggest a distinct personality, but it leans slightly towards a generic inquiry."
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T03_office_wear",
+    "description": "Office work -> recommend Eyeglasses for Office.",
+    "user_turns": [
+      "Looking for eyeglasses for office work, budget 2000 INR"
+    ],
+    "all_replies": [
+      "Office vibes, huh? Let\u2019s get you set up with some stylish specs.\n\nFirst up, the **Vincent Chase Steel** at Rs 1100. These half-rim stainless steel frames offer a sleek, modern look, perfect for a professional setting. Plus, they're light enough for all-day wear [LENS-EG-004].\n\nNext, check out the **Vincent Chase Online** for Rs 1200. Classic black acetate frames give off that timeless professional look. They also come with Blue Cut lenses, which help with eye strain from all that screen time [LENS-EG-001].\n\nLastly, consider the **Lenskart Air Pro** at Rs 1900. Made from TR90, they're super light and designed for those long hours in front of the computer. Comfort meets style [LENS-EG-021].\n\nWhat kind of style are you leaning toward?"
+    ],
+    "turns_used": 1,
+    "latency_sec": 7.13,
+    "final_reply": "Office vibes, huh? Let\u2019s get you set up with some stylish specs.\n\nFirst up, the **Vincent Chase Steel** at Rs 1100. These half-rim stainless steel frames offer a sleek, modern look, perfect for a professional setting. Plus, they're light enough for all-day wear [LENS-EG-004].\n\nNext, check out the **Vincent Chase Online** for Rs 1200. Classic black acetate frames give off that timeless professional look. They also come with Blue Cut lenses, which help with eye strain from all that screen time [LENS-EG-001].\n\nLastly, consider the **Lenskart Air Pro** at Rs 1900. Made from TR90, they're super light and designed for those long hours in front of the computer. Comfort meets style [LENS-EG-021].\n\nWhat kind of style are you leaning toward?",
+    "recommended_ids": [
+      "LENS-EG-001",
+      "LENS-EG-004",
+      "LENS-EG-021"
+    ],
+    "path_taken": "recommend",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 3
+    },
+    "budget_adherence": {
+      "passed": true,
+      "over_budget_ids": [],
+      "max_budget": 2000
+    },
+    "category_adherence": {
+      "passed": true,
+      "wrong_category_ids": [],
+      "expected": "Eyeglasses"
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "recommend",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "score": 5,
+      "reasoning": "The recommendations provide stylish eyewear options that are suitable for an office environment, addressing both aesthetics and comfort for long hours of use."
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and engaging, provides helpful options within the budget, but could be slightly more concise."
+    },
+    "personality_consistency": {
+      "score": 3,
+      "reasoning": "The response is functional and informative but lacks a strong personality, leaning towards a neutral tone with minimal wit or conversational flair."
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T04_brand_specific",
+    "description": "Brand-specific request -> only that brand.",
+    "user_turns": [
+      "Show me John Jacobs eyeglasses for daily wear"
+    ],
+    "all_replies": [
+      "What\u2019s your daily routine like? Do you spend more time indoors, outdoors, or a mix of both?"
+    ],
+    "turns_used": 1,
+    "latency_sec": 4.53,
+    "final_reply": "What\u2019s your daily routine like? Do you spend more time indoors, outdoors, or a mix of both?",
+    "recommended_ids": [],
+    "path_taken": "clarify",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 0
+    },
+    "budget_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "category_adherence": {
+      "passed": true,
+      "wrong_category_ids": [],
+      "expected": "Eyeglasses"
+    },
+    "brand_adherence": {
+      "passed": true,
+      "wrong_brand_ids": [],
+      "expected": "John Jacobs"
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "recommend",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "skipped": true
+    },
+    "conversation_quality": {
+      "score": 3,
+      "reasoning": "The response is warm and engages the user, but it lacks direct information about John Jacobs eyeglasses."
+    },
+    "personality_consistency": {
+      "score": 2,
+      "reasoning": "The response lacks any quirky or witty elements, sounding more like a generic inquiry rather than showcasing a distinct personality."
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T05_multi_turn_gathering",
+    "description": "Multi-turn gathering then recommendation.",
+    "user_turns": [
+      "I need new glasses",
+      "For working on my computer, I get eye strain",
+      "Around 1800 rupees max"
+    ],
+    "all_replies": [
+      "Cool! What're you mainly using them for\u2014work, reading, or something more adventurous?",
+      "Gotcha. Have you considered blue light blocking lenses? They can really help with eye strain from all that screen time.",
+      "Looks like you're after some smart office eyewear with blue cut lenses\u2014great choice for screen time!\n\nFirst up, the **Vincent Chase Steel** [LENS-EG-004] at Rs 1100. It's got that sleek stainless steel vibe, super light, and the blue cut lenses will help with eye strain. \n\nNext, check out the **Vincent Chase Sleek** [LENS-EG-026] for Rs 1100. It\u2019s also light and has a professional look, plus those blue cut lenses are a lifesaver during long work hours. \n\nLastly, there's the **Vincent Chase Modern Rect** [LENS-EG-035] at Rs 1200. It sports a modern rectangular frame that\u2019s sharp and stylish, also with blue cut lenses.\n\nWhich of these catches your eye?"
+    ],
+    "turns_used": 3,
+    "latency_sec": 14.11,
+    "final_reply": "Looks like you're after some smart office eyewear with blue cut lenses\u2014great choice for screen time!\n\nFirst up, the **Vincent Chase Steel** [LENS-EG-004] at Rs 1100. It's got that sleek stainless steel vibe, super light, and the blue cut lenses will help with eye strain. \n\nNext, check out the **Vincent Chase Sleek** [LENS-EG-026] for Rs 1100. It\u2019s also light and has a professional look, plus those blue cut lenses are a lifesaver during long work hours. \n\nLastly, there's the **Vincent Chase Modern Rect** [LENS-EG-035] at Rs 1200. It sports a modern rectangular frame that\u2019s sharp and stylish, also with blue cut lenses.\n\nWhich of these catches your eye?",
+    "recommended_ids": [
+      "LENS-EG-004",
+      "LENS-EG-026",
+      "LENS-EG-035"
+    ],
+    "path_taken": "recommend",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 3
+    },
+    "budget_adherence": {
+      "passed": true,
+      "over_budget_ids": [],
+      "max_budget": 1800
+    },
+    "category_adherence": {
+      "passed": true,
+      "wrong_category_ids": [],
+      "expected": "Eyeglasses"
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "recommend",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "score": 5,
+      "reasoning": "The recommendations perfectly align with the user's need for eyewear suitable for office use, specifically designed to reduce eye strain from screen time."
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and helpful, providing specific product recommendations within the budget, but could be slightly more concise."
+    },
+    "personality_consistency": {
+      "score": 3,
+      "reasoning": "The response is functional and informative but lacks a distinctive voice or personality, sounding more like a generic assistant."
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T06_impossible_budget",
+    "description": "Impossible budget -> honest no-match, not invention.",
+    "user_turns": [
+      "I want sunglasses under 500 rupees"
+    ],
+    "all_replies": [
+      "What style are you leaning toward? Something sporty, classic, or maybe a bit trendy?"
+    ],
+    "turns_used": 1,
+    "latency_sec": 4.21,
+    "final_reply": "What style are you leaning toward? Something sporty, classic, or maybe a bit trendy?",
+    "recommended_ids": [],
+    "path_taken": "clarify",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 0
+    },
+    "budget_adherence": {
+      "passed": true,
+      "over_budget_ids": [],
+      "max_budget": 500
+    },
+    "category_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "recommend",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "skipped": true
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and invites further conversation, but it could be more concise."
+    },
+    "personality_consistency": {
+      "score": 4,
+      "reasoning": "The conversational tone and the use of 'leaning toward' adds a quirky touch, but it could benefit from a bit more personality or humor."
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T07_fashion_sunglasses",
+    "description": "Fashion focus -> Sunglasses for Fashion/Social.",
+    "user_turns": [
+      "I want trendy sunglasses for parties and events, around 3000 rupees"
+    ],
+    "all_replies": [
+      "Parties and events call for some standout shades, don\u2019t they? Here are a couple of stylish picks that\u2019ll definitely turn heads:\n\n1. **Vincent Chase Cat-Eye Sun** - Rs 1550: This full-rim frame is all about making a fashionable statement, perfect for those social gatherings. [LENS-SG-010]\n\n2. **Vincent Chase Trend Sun** - Rs 1650: If you\u2019re feeling bold, these oversized sunglasses are trendy and sure to catch attention. [LENS-SG-016]\n\n3. **Vincent Chase Retro-Chic Sun** - Rs 1750: For a mix of vintage style and modern flair, these retro-chic sunglasses are a great choice for any event. [LENS-SG-022]\n\nAny of these catch your eye, or are you leaning towards a specific style?"
+    ],
+    "turns_used": 1,
+    "latency_sec": 6.58,
+    "final_reply": "Parties and events call for some standout shades, don\u2019t they? Here are a couple of stylish picks that\u2019ll definitely turn heads:\n\n1. **Vincent Chase Cat-Eye Sun** - Rs 1550: This full-rim frame is all about making a fashionable statement, perfect for those social gatherings. [LENS-SG-010]\n\n2. **Vincent Chase Trend Sun** - Rs 1650: If you\u2019re feeling bold, these oversized sunglasses are trendy and sure to catch attention. [LENS-SG-016]\n\n3. **Vincent Chase Retro-Chic Sun** - Rs 1750: For a mix of vintage style and modern flair, these retro-chic sunglasses are a great choice for any event. [LENS-SG-022]\n\nAny of these catch your eye, or are you leaning towards a specific style?",
+    "recommended_ids": [
+      "LENS-SG-010",
+      "LENS-SG-016",
+      "LENS-SG-022"
+    ],
+    "path_taken": "recommend",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 3
+    },
+    "budget_adherence": {
+      "passed": true,
+      "over_budget_ids": [],
+      "max_budget": 3000
+    },
+    "category_adherence": {
+      "passed": true,
+      "wrong_category_ids": [],
+      "expected": "Sunglasses"
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "recommend",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "score": 5,
+      "reasoning": "The recommendations are stylish sunglasses that align perfectly with the user's fashion-focused use case, especially for parties and events."
+    },
+    "conversation_quality": {
+      "score": 5,
+      "reasoning": "The response is warm, concise, and provides helpful suggestions within the user's budget."
+    },
+    "personality_consistency": {
+      "score": 4,
+      "reasoning": "The agent uses a conversational tone and phrases like 'standout shades' and 'catch attention,' but it leans slightly towards a generic listing format."
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T08_driving_sunglasses",
+    "description": "Driving use case.",
+    "user_turns": [
+      "Need sunglasses for daily driving, budget 2500"
+    ],
+    "all_replies": [
+      "Driving sunglasses? Polarized is the way to go\u2014cuts the glare like a hot knife through butter.\n\nFirst up, the **Vincent Chase Polarized** at Rs 1500. Classic style, and those polarized lenses will give you superior clarity on the road. [LENS-SG-001]\n\nNext, consider the **Vincent Chase Polarized Elite** for Rs 1700. It\u2019s got that same polarization but with a bit more flair and comfort, perfect for long drives. [LENS-SG-026]\n\nLastly, there's the **Lenskart Air Pro Sun Max** at Rs 2500. Light, comfy, and designed for those long hours outdoors. It\u2019s got anti-glare too, which is a nice touch for driving. [LENS-SG-040]\n\nAny of these catch your eye, or are you leaning towards a specific style?"
+    ],
+    "turns_used": 1,
+    "latency_sec": 8.87,
+    "final_reply": "Driving sunglasses? Polarized is the way to go\u2014cuts the glare like a hot knife through butter.\n\nFirst up, the **Vincent Chase Polarized** at Rs 1500. Classic style, and those polarized lenses will give you superior clarity on the road. [LENS-SG-001]\n\nNext, consider the **Vincent Chase Polarized Elite** for Rs 1700. It\u2019s got that same polarization but with a bit more flair and comfort, perfect for long drives. [LENS-SG-026]\n\nLastly, there's the **Lenskart Air Pro Sun Max** at Rs 2500. Light, comfy, and designed for those long hours outdoors. It\u2019s got anti-glare too, which is a nice touch for driving. [LENS-SG-040]\n\nAny of these catch your eye, or are you leaning towards a specific style?",
+    "recommended_ids": [
+      "LENS-SG-001",
+      "LENS-SG-026",
+      "LENS-SG-040"
+    ],
+    "path_taken": "recommend",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 3
+    },
+    "budget_adherence": {
+      "passed": true,
+      "over_budget_ids": [],
+      "max_budget": 2500
+    },
+    "category_adherence": {
+      "passed": true,
+      "wrong_category_ids": [],
+      "expected": "Sunglasses"
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "recommend",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "score": 5,
+      "reasoning": "The recommendations are specifically tailored for driving, emphasizing polarized sunglasses that reduce glare, which is essential for safe driving."
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and helpful, providing specific product recommendations while remaining concise."
+    },
+    "personality_consistency": {
+      "score": 4,
+      "reasoning": "The phrase 'cuts the glare like a hot knife through butter' adds a quirky touch, but the listing of products leans slightly into a generic tone."
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T09_lens_specific",
+    "description": "Specific lens preference.",
+    "user_turns": [
+      "I need eyeglasses with blue cut lenses for long screen hours, under 2000"
+    ],
+    "all_replies": [
+      "Long screen hours? You\u2019re gonna want some Blue Cut lenses to keep those peepers happy.\n\nFirst up, the **Vincent Chase Online** at Rs 1200. Classic black frames, they\u2019ll give you a professional look while protecting your eyes from blue light. [LENS-EG-001]\n\nNext, check out the **Lenskart Air Lite** for Rs 1800. These featherlight frames are perfect for all-day comfort, plus they come with Blue Cut lenses too. [LENS-EG-012]\n\nFinally, there's the **Vincent Chase Metal** at Rs 1150. Sturdy frames with a classic design, and those Blue Cut lenses will help with screen strain. [LENS-EG-019]\n\nWhich one\u2019s catching your eye? Or do you have a particular style in mind?"
+    ],
+    "turns_used": 1,
+    "latency_sec": 8.51,
+    "final_reply": "Long screen hours? You\u2019re gonna want some Blue Cut lenses to keep those peepers happy.\n\nFirst up, the **Vincent Chase Online** at Rs 1200. Classic black frames, they\u2019ll give you a professional look while protecting your eyes from blue light. [LENS-EG-001]\n\nNext, check out the **Lenskart Air Lite** for Rs 1800. These featherlight frames are perfect for all-day comfort, plus they come with Blue Cut lenses too. [LENS-EG-012]\n\nFinally, there's the **Vincent Chase Metal** at Rs 1150. Sturdy frames with a classic design, and those Blue Cut lenses will help with screen strain. [LENS-EG-019]\n\nWhich one\u2019s catching your eye? Or do you have a particular style in mind?",
+    "recommended_ids": [
+      "LENS-EG-001",
+      "LENS-EG-012",
+      "LENS-EG-019"
+    ],
+    "path_taken": "recommend",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 3
+    },
+    "budget_adherence": {
+      "passed": true,
+      "over_budget_ids": [],
+      "max_budget": 2000
+    },
+    "category_adherence": {
+      "passed": true,
+      "wrong_category_ids": [],
+      "expected": "Eyeglasses"
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "recommend",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "score": 5,
+      "reasoning": "The recommendations focus on blue light blocking glasses, which are ideal for someone spending long hours in an office setting."
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and helpful, providing specific options within the budget, but could be slightly more concise."
+    },
+    "personality_consistency": {
+      "score": 4,
+      "reasoning": "The agent uses a conversational tone with phrases like 'you\u2019re gonna want' and 'catching your eye,' but slips into a more generic listing format when presenting options."
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T10_premium_request",
+    "description": "Premium / no budget cap.",
+    "user_turns": [
+      "Show me premium titanium eyeglasses, money no object"
+    ],
+    "all_replies": [
+      "Nice choice! Titanium frames are super lightweight and durable. Are you leaning toward a specific style, like more classic or something a bit bolder?"
+    ],
+    "turns_used": 1,
+    "latency_sec": 4.15,
+    "final_reply": "Nice choice! Titanium frames are super lightweight and durable. Are you leaning toward a specific style, like more classic or something a bit bolder?",
+    "recommended_ids": [],
+    "path_taken": "clarify",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 0
+    },
+    "budget_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "category_adherence": {
+      "passed": true,
+      "wrong_category_ids": [],
+      "expected": "Eyeglasses"
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "recommend",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "skipped": true
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and engaging, but could be more concise and directly address the user's request for premium options."
+    },
+    "personality_consistency": {
+      "score": 4,
+      "reasoning": "The agent shows personality with phrases like 'super lightweight and durable' and engages the user with a conversational tone, but it leans slightly into generic territory with the phrase 'Nice choice!'"
+    },
+    "followup_handling": {
+      "skipped": true
+    }
+  },
+  {
+    "test_id": "T11_followup_color_question",
+    "description": "After recommendation, user asks about colors -> must stay in context.",
+    "user_turns": [
+      "I need sunglasses for driving, around 2000 rupees",
+      "Does the first one come in tortoise?"
+    ],
+    "all_replies": [
+      "Driving sunglasses need to cut glare like a hot knife through butter. Here are my top picks for you:\n\n1. **Vincent Chase Polarized** - Rs 1500  \n   Classic polarized sunglasses with superior clarity. Perfect for driving, plus they\u2019ve got that timeless style [LENS-SG-001].\n\n2. **Vincent Chase Polarized Elite** - Rs 1700  \n   These are a step up in style and comfort, still delivering the essential polarized lenses for those long drives [LENS-SG-026].\n\n3. **Vincent Chase Metal Sun Pro** - Rs 1650  \n   Sturdy metal frames with polarized lenses. Great for a classic look while keeping your eyes protected on the road [LENS-SG-044].\n\nAny of these catch your eye? Or do you want to dive deeper into one of them?",
+      "Nope, the Vincent Chase Polarized doesn\u2019t come in tortoise. It\u2019s more of a classic black, but if you\u2019re leaning towards tortoise, the Vincent Chase Polarized Elite might be worth checking out. Want to explore that option?"
+    ],
+    "turns_used": 2,
+    "latency_sec": 14.22,
+    "final_reply": "Nope, the Vincent Chase Polarized doesn\u2019t come in tortoise. It\u2019s more of a classic black, but if you\u2019re leaning towards tortoise, the Vincent Chase Polarized Elite might be worth checking out. Want to explore that option?",
+    "recommended_ids": [],
+    "path_taken": "followup",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 0
+    },
+    "budget_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "category_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "followup",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "skipped": true
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and helpful, providing an alternative option, but could be slightly more concise."
+    },
+    "personality_consistency": {
+      "score": 4,
+      "reasoning": "The response shows some personality with phrases like 'leaning towards' and suggests an alternative, but it lacks a bit of the quirky and witty tone that would make it stand out more."
+    },
+    "followup_handling": {
+      "score": 4,
+      "reasoning": "The agent answered the color availability question directly but suggested a different product instead of focusing solely on the user's inquiry."
+    }
+  },
+  {
+    "test_id": "T12_followup_comparison",
+    "description": "User asks for comparison -> agent should give an opinion.",
+    "user_turns": [
+      "I want eyeglasses for office work under 2500",
+      "Which one would you actually pick between these two?"
+    ],
+    "all_replies": [
+      "You've got some solid options for office eyeglasses here. Let\u2019s narrow it down.\n\n1. **Vincent Chase Online** \u2013 Rs 1200  \n   Classic black frames that scream professionalism. Plus, you can opt for Blue Cut lenses to help with eye strain from all that screen time. [LENS-EG-001]\n\n2. **Lenskart Air Pro** \u2013 Rs 1950  \n   These TR90 frames are lightweight and designed for long hours at the computer. The Blue Cut and Anti-Glare options are a nice touch for office life. [LENS-EG-043]\n\n3. **Vincent Chase Metal-Classic** \u2013 Rs 1150  \n   Sturdy and reliable, these metal frames have a timeless design. They also come with Blue Cut lenses, perfect for daily use. [LENS-EG-041]\n\nWhich style are you leaning towards? Something classic or more modern?",
+      "Honestly, I'd go for the **Vincent Chase Online**. The acetate material gives it a classic vibe, and it\u2019s got that professional look which is always a win in an office setting. Plus, the Blue Cut option is great for reducing eye strain. The Metal-Classic is solid too, but I think the Online just has a bit more character. What do you think?"
+    ],
+    "turns_used": 2,
+    "latency_sec": 11.08,
+    "final_reply": "Honestly, I'd go for the **Vincent Chase Online**. The acetate material gives it a classic vibe, and it\u2019s got that professional look which is always a win in an office setting. Plus, the Blue Cut option is great for reducing eye strain. The Metal-Classic is solid too, but I think the Online just has a bit more character. What do you think?",
+    "recommended_ids": [],
+    "path_taken": "followup",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 0
+    },
+    "budget_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "category_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "followup",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "skipped": true
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and helpful, providing a clear preference and reasoning, but could be slightly more concise."
+    },
+    "personality_consistency": {
+      "score": 5,
+      "reasoning": "The agent expresses a clear opinion with a conversational tone, using phrases like 'I'd go for' and 'just has a bit more character' that showcase personality."
+    },
+    "followup_handling": {
+      "score": 5,
+      "reasoning": "The agent directly answered the user's question by providing a clear opinion on which eyeglasses to choose, staying in context with the previously discussed products."
+    }
+  },
+  {
+    "test_id": "T13_followup_lens_upgrade",
+    "description": "User asks about lens upgrade -> agent should explain trade-off.",
+    "user_turns": [
+      "I need eyeglasses for screens, budget 2000",
+      "Is the blue cut upgrade actually worth it?"
+    ],
+    "all_replies": [
+      "Looks like you\u2019re on the hunt for some sharp specs for the office. Blue Cut lenses are a solid choice for screen time. Here are a few that\u2019ll do the trick:\n\n1. **Vincent Chase Online** - Rs 1200  \n   Classic black frames that scream professionalism and come with Blue Cut lenses. Perfect for keeping your eyes comfy during long meetings [LENS-EG-001].\n\n2. **Vincent Chase Steel** - Rs 1100  \n   These sleek stainless steel frames are light and stylish, plus they also come with Blue Cut. A great modern option if you want to keep it fresh [LENS-EG-004].\n\n3. **Lenskart Air Pro** - Rs 1900  \n   If you want something a bit more advanced, these TR90 frames are super light and designed for long hours at the computer, complete with Blue Cut lenses [LENS-EG-021].\n\nWhich style are you leaning towards?",
+      "Honestly, if you're clocking more than six hours in front of screens daily, the Blue Cut upgrade is worth it. It helps reduce eye strain and fatigue, making your workday a bit easier. If you're less than that, you might not notice a huge difference. So, how many hours are you usually on the screen?"
+    ],
+    "turns_used": 2,
+    "latency_sec": 12.83,
+    "final_reply": "Honestly, if you're clocking more than six hours in front of screens daily, the Blue Cut upgrade is worth it. It helps reduce eye strain and fatigue, making your workday a bit easier. If you're less than that, you might not notice a huge difference. So, how many hours are you usually on the screen?",
+    "recommended_ids": [],
+    "path_taken": "followup",
+    "catalog_adherence": {
+      "passed": true,
+      "invalid_ids": [],
+      "recommended_count": 0
+    },
+    "budget_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "category_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "brand_adherence": {
+      "passed": true,
+      "skipped": true
+    },
+    "clarification_behavior": {
+      "passed": true,
+      "expected": "followup",
+      "note": "any reply acceptable"
+    },
+    "banned_phrases": {
+      "passed": true,
+      "found_phrases": []
+    },
+    "use_case_fit": {
+      "skipped": true
+    },
+    "conversation_quality": {
+      "score": 4,
+      "reasoning": "The response is warm and helpful, providing a clear recommendation based on screen time, but could be slightly more concise."
+    },
+    "personality_consistency": {
+      "score": 4,
+      "reasoning": "The agent's conversational tone and opinion on the Blue Cut upgrade show personality, but it leans slightly towards a generic assistant with the straightforward phrasing."
+    },
+    "followup_handling": {
+      "score": 5,
+      "reasoning": "The agent directly addressed the user's question about the value of the Blue Cut upgrade, providing a substantive answer based on usage and context."
+    }
+  }
+]
